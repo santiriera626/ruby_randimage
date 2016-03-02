@@ -7,7 +7,7 @@ describe RubyRandimage do
 
 
     it 'converts to lowercase' do
-      expect(hello).to eq "Hellos!"
+      expect(hello).to eq "Hello!"
     end
   end
 end
