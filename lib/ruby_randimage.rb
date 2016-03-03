@@ -11,12 +11,26 @@ module RubyRandimage
   }
 
 
-  def self.dummy_method_to_test_coveralls
-    puts DEFAULT_OPTIONS[:color]
+  def self.dummy_method_to_test_coveralls options={}
+    puts DEFAULT_OPTIONS[:colors]
     puts DEFAULT_OPTIONS[:symmetry_axes]
     puts DEFAULT_OPTIONS[:grid_size]
     puts DEFAULT_OPTIONS[:background_color]
     puts DEFAULT_OPTIONS[:key]
+
+    options = DEFAULT_OPTIONS.merge(options)
+    
+    raise 'key is nil or less than 16 bytes' if options[:key] == nil || options[:key].length < 16
+    raise 'grid_size must be between 4 and 9' if options[:grid_size] < 4 || options[:grid_size] > 9
+
+    if options[:colors] == ["#000000", "#FF0000"]
+      puts "colors default"
+    else
+      puts "colors not default"
+      puts "this line is not cover"
+      puts "this line is not cover too"
+    end
+    return 1
   end
 
 end
