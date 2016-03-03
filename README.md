@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/santiriera626/ruby_randimage.svg?branch=master)](https://travis-ci.org/santiriera626/ruby_randimage)
 [![Coverage Status](https://coveralls.io/repos/github/santiriera626/ruby_randimage/badge.svg?branch=master)](https://coveralls.io/github/santiriera626/ruby_randimage?branch=master)
 [![Code Climate](https://codeclimate.com/github/santiriera626/ruby_randimage/badges/gpa.svg)](https://codeclimate.com/github/santiriera626/ruby_randimage)
-
+[![security](https://hakiri.io/github/santiriera626/ruby_randimage/master.svg)](https://hakiri.io/github/santiriera626/ruby_randimage/master)
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ruby_randimage`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
