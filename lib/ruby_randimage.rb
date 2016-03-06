@@ -1,5 +1,5 @@
 require "ruby_randimage/version"
-require "byebug"
+#require "byebug"
 
 module RubyRandimage
 
