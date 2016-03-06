@@ -10,3 +10,4 @@
 temp_image_*
 .ruby-version
 .ruby-gemset
+.byebug_history

@@ -26,8 +26,9 @@ module RubyRandimage
     options = DEFAULT_OPTIONS.merge(options)
     
     width = options[:grid_size]
-    
-    #raise 'grid_size must be between 4 and 9' if options[:grid_size] < 4 || options[:grid_size] > 9
+
+    raise "title is invalid" if options[:title] == nil || options[:title] == ''
+    raise "grid_size must be between 4 and 9" if options[:grid_size] < 4 || options[:grid_size] > 9
 
     svg = "<svg xmlns='http://www.w3.org/2000/svg' width='#{width}' height='#{width}'>"      
     svg += "<title>#{options[:title]}</title>" 
