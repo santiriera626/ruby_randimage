@@ -1,5 +1,9 @@
 
 fijar o liberar versiones gemas en .gemspec
-
+app demo para readme
+comentarios en codigo
+decidir si se pasa como parámetro el tamaño de la imagen y dentro se hacen los calculos
+corregir todos los comentarios para que sean decentes en ingles
+ver TODO: y FIX:
 
 
