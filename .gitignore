@@ -7,3 +7,6 @@
 /pkg/
 /spec/reports/
 /tmp/
+temp_image_*
+.ruby-version
+.ruby-gemset

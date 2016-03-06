@@ -1,0 +1,5 @@
+
+fijar o liberar versiones gemas en .gemspec
+
+
+
