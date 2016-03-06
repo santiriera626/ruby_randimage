@@ -4,10 +4,10 @@ require "ruby_randimage/version"
 module RubyRandimage
 
   DEFAULT_OPTIONS = {
-    title: "User",
+    title: "image title",
     colors: ["#aaaaaa", "#990000"],
     symmetry_axes: [true, true],
-    grid_size: 5,
+    grid_size: 5
   }
 
 

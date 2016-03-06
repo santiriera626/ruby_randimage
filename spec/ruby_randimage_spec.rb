@@ -12,7 +12,7 @@ describe RubyRandimage do
     # TODO: [sriera] Eliminar antes de build
     it "text" do
       25.times do |i|
-        RubyRandimage.create_and_save_file "temp_image_#{i}.svg"
+        RubyRandimage.create_and_save_file "temp_image_#{i}.svg" , { :title=>"image_#{i}", :colors=> ["#aaaaaa", "#990000"], symmetry_axes: [true, true], grid_size: 5}
       end
     
     end
