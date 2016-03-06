@@ -13,7 +13,7 @@ describe RubyRandimage do
     it "text" do
 
       24.times do |i|
-        RubyRandimage.create_and_save_file "temp_image_#{i}.svg"
+        RubyRandimage.create_and_save_file "tmp/temp_image_#{i}.svg"
       end
       expect("hola").to eq("hola")
     
@@ -25,7 +25,7 @@ describe RubyRandimage do
     end
 
     it "creates an image file" do
-      @@result = RubyRandimage.create_and_save_file('test_image.svg')
+      @@result = RubyRandimage.create_and_save_file("tmp/test_image.svg")
       expect(@@result).to be_truthy
     end
 
