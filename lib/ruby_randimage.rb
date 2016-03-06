@@ -5,10 +5,10 @@ module RubyRandimage
 
   # TODO: [sriera] doc
   DEFAULT_OPTIONS = {
-    title: "image title",
-    colors: ["#aaaaaa", "#990000"],
-    symmetry_axes: [true, true],
-    num_cells: 5
+    :title => "image title",
+    :colors => ["#aaaaaa", "#990000"],
+    :symmetry_axes => [true, true],
+    :num_cells => 5
   }
 
   # TODO: [sriera] doc
