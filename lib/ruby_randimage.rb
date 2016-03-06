@@ -25,6 +25,9 @@ module RubyRandimage
 
     options = DEFAULT_OPTIONS.merge(options)
     
+    raise "title is invalid" if options[:title] == nil || options[:title] == ''
+    raise "grid_size must be between 4 and 9" if options[:grid_size] < 4 || options[:grid_size] > 9
+
     matrix = generate_matrix options[:grid_size], options[:colors], options[:symmetry_axes] 
     return generate_svg options[:title], options[:grid_size], matrix
   end
