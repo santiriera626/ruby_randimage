@@ -7,7 +7,7 @@ describe RubyRandimage do
     # TODO: [sriera] Eliminar antes de build
     it "text" do
       25.times do |i|
-        RubyRandimage.create_and_save_file "temp_image_#{i}.svg" , { :title=>"image_#{i}", :colors=> ["#aaaaaa", "#990000"], symmetry_axes: [true, true], num_cells: 5}
+        RubyRandimage.create_and_save_file "temp_image_#{i}.svg" , { :title=>"image_#{i}", :colors=> ["#aaaaaa", "#990000"], :symmetry_axes=> [true, true], :num_cells=> 5}
       end
     end
 
@@ -17,22 +17,22 @@ describe RubyRandimage do
     end
 
     it "creates a svg without simetry" do
-      blob = RubyRandimage.create({ symmetry_axes: [false, false] })
+      blob = RubyRandimage.create({ :symmetry_axes=> [false, false] })
       expect(blob).to be_a_kind_of(String)
     end
 
     it "creates a svg with horizontal simetry" do
-      blob = RubyRandimage.create({ symmetry_axes: [true, false] })
+      blob = RubyRandimage.create({ :symmetry_axes=> [true, false] })
       expect(blob).to be_a_kind_of(String)
     end
 
     it "creates a svg with vertical simetry" do
-      blob = RubyRandimage.create({ symmetry_axes: [false, true] })
+      blob = RubyRandimage.create({ :symmetry_axes=> [false, true] })
       expect(blob).to be_a_kind_of(String)
     end
 
     it "creates a svg with horizontal and vertical simetry" do
-      blob = RubyRandimage.create({ symmetry_axes: [false, true] })
+      blob = RubyRandimage.create({ :symmetry_axes=> [false, true] })
       expect(blob).to be_a_kind_of(String)
     end
 
@@ -42,13 +42,13 @@ describe RubyRandimage do
     end
 
     it "does not create a svg image with an invalid grid size" do
-      lambda { RubyRandimage.create(num_cells: 2) }.should raise_exception('num_cells must be between 4 and 9')
-      lambda { RubyRandimage.create(num_cells: 10) }.should raise_exception('num_cells must be between 4 and 9')
+      lambda { RubyRandimage.create(:num_cells=> 2) }.should raise_exception('num_cells must be between 4 and 9')
+      lambda { RubyRandimage.create(:num_cells=> 10) }.should raise_exception('num_cells must be between 4 and 9')
     end
 
     it "does not create a svg image with an invalid title" do
-      lambda { RubyRandimage.create({title: nil}) }.should raise_exception('title is invalid')
-      lambda { RubyRandimage.create({title: ''}) }.should raise_exception('title is invalid')
+      lambda { RubyRandimage.create({:title=> nil}) }.should raise_exception('title is invalid')
+      lambda { RubyRandimage.create({:title=> ''}) }.should raise_exception('title is invalid')
     end
   end
 end
