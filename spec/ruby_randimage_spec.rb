@@ -14,5 +14,10 @@ describe RubyRandimage do
       expect(RubyRandimage.dummy_method_to_test_coveralls).to eq(1)
     end
 
+    it "text" do
+      expect(RubyRandimage.create).to eq(1)
+    end
+
+
   end
 end
