@@ -8,7 +8,7 @@ module RubyRandimage
     :title => "image title",
     :colors => ["#aaaaaa", "#990000"],
     :symmetry_axes => [true, true],
-    :num_cells => 5
+    :num_cells => 8
   }
 
   # TODO: [sriera] doc
@@ -28,7 +28,7 @@ module RubyRandimage
     options = DEFAULT_OPTIONS.merge(options)
     
     raise "title is invalid" if options[:title] == nil || options[:title] == ''
-    raise "num_cells must be between 4 and 9" if options[:num_cells] < 4 || options[:num_cells] > 9
+    #raise "num_cells must be between 4 and 9" if options[:num_cells] < 4 || options[:num_cells] > 9
 
     matrix = generate_matrix options[:num_cells], options[:colors], options[:symmetry_axes]
 

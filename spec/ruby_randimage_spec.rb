@@ -7,7 +7,7 @@ describe RubyRandimage do
     # TODO: [sriera] Eliminar antes de build
     it "text" do
       25.times do |i|
-        RubyRandimage.create_and_save_file "temp_image_#{i}.svg" , { :title=>"image_#{i}", :colors=> ["#aaaaaa", "#990000"], :symmetry_axes=> [true, true], :num_cells=> 5}
+        RubyRandimage.create_and_save_file "temp_image_#{i}.svg" , { :title=>"image_#{i}", :colors=> ["#ffffff","#ffffff","#ffffff", "#770000", "#550000", "#990000", "#990000", "#990000"], :symmetry_axes=> [true, true], :num_cells=> 10}
       end
     end
 
