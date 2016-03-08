@@ -28,7 +28,7 @@ module RubyRandimage
     options = DEFAULT_OPTIONS.merge(options)
     
     raise "title is invalid" if options[:title] == nil || options[:title] == ''
-    #raise "num_cells must be between 4 and 9" if options[:num_cells] < 4 || options[:num_cells] > 9
+    raise "num_cells must be between 2 and 256" if options[:num_cells] < 2 || options[:num_cells] > 256
 
     matrix = generate_matrix options[:num_cells], options[:colors], options[:symmetry_axes]
 

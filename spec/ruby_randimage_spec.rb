@@ -42,8 +42,8 @@ describe RubyRandimage do
     end
 
     it "does not create a svg image with an invalid grid size" do
-      lambda { RubyRandimage.create(:num_cells=> 2) }.should raise_exception('num_cells must be between 4 and 9')
-      lambda { RubyRandimage.create(:num_cells=> 10) }.should raise_exception('num_cells must be between 4 and 9')
+      lambda { RubyRandimage.create(:num_cells=> 1) }.should raise_exception('num_cells must be between 2 and 256')
+      lambda { RubyRandimage.create(:num_cells=> 257) }.should raise_exception('num_cells must be between 2 and 256')
     end
 
     it "does not create a svg image with an invalid title" do
