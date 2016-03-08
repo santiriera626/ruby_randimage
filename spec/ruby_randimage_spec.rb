@@ -12,28 +12,28 @@ describe RubyRandimage do
     end
 
     it "creates a svg" do
-      blob = RubyRandimage.create
-      expect(blob).to be_a_kind_of(String)
+      svg = RubyRandimage.create
+      expect(svg).to be_a_kind_of(String)
     end
 
     it "creates a svg without simetry" do
-      blob = RubyRandimage.create({ :symmetry_axes=> [false, false] })
-      expect(blob).to be_a_kind_of(String)
+      svg = RubyRandimage.create({ :symmetry_axes=> [false, false] })
+      expect(svg).to be_a_kind_of(String)
     end
 
     it "creates a svg with horizontal simetry" do
-      blob = RubyRandimage.create({ :symmetry_axes=> [true, false] })
-      expect(blob).to be_a_kind_of(String)
+      svg = RubyRandimage.create({ :symmetry_axes=> [true, false] })
+      expect(svg).to be_a_kind_of(String)
     end
 
     it "creates a svg with vertical simetry" do
-      blob = RubyRandimage.create({ :symmetry_axes=> [false, true] })
-      expect(blob).to be_a_kind_of(String)
+      svg = RubyRandimage.create({ :symmetry_axes=> [false, true] })
+      expect(svg).to be_a_kind_of(String)
     end
 
     it "creates a svg with horizontal and vertical simetry" do
-      blob = RubyRandimage.create({ :symmetry_axes=> [false, true] })
-      expect(blob).to be_a_kind_of(String)
+      svg = RubyRandimage.create({ :symmetry_axes=> [false, true] })
+      expect(svg).to be_a_kind_of(String)
     end
 
     it "creates an svg file" do
