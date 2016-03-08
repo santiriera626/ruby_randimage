@@ -1,6 +1,7 @@
 require 'coveralls'
-require 'ruby_randimage'
 Coveralls.wear!
+
+require 'ruby_randimage'
 
 RSpec.configure do |config|
 
