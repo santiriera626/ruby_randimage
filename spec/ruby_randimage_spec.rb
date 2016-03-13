@@ -15,6 +15,12 @@ describe RubyRandimage do
       svg_string = RubyRandimage.create
       expect(svg_string).to be_a_kind_of(String)
     end
+    
+    it "creates a two equal svg with same seed value" do
+      svg_string = RubyRandimage.create :seed=> 5875
+      svg_string2 = RubyRandimage.create :seed=> 5875
+      expect(svg_string).to eq(svg_string2)
+    end
 
     it "creates a svg without simetry" do
       svg_string = RubyRandimage.create({ :symmetry_axes=> [false, false] })
@@ -42,13 +48,13 @@ describe RubyRandimage do
     end
 
     it "does not create a svg image with an invalid grid size" do
-      lambda { RubyRandimage.create(:num_cells=> 1) }.should raise_exception('num_cells must be between 2 and 256')
-      lambda { RubyRandimage.create(:num_cells=> 257) }.should raise_exception('num_cells must be between 2 and 256')
+      expect{RubyRandimage.create(:num_cells=> 1)}.to raise_exception('num_cells must be between 2 and 256')
+      expect{RubyRandimage.create(:num_cells=> 257)}.to raise_exception('num_cells must be between 2 and 256')
     end
 
     it "does not create a svg image with an invalid title" do
-      lambda { RubyRandimage.create({:title=> nil}) }.should raise_exception('title is invalid')
-      lambda { RubyRandimage.create({:title=> ''}) }.should raise_exception('title is invalid')
+      expect{RubyRandimage.create(:title=> nil)}.to raise_exception('title is invalid')
+      expect{RubyRandimage.create(:title=> '')}.to raise_exception('title is invalid')
     end
   end
 end

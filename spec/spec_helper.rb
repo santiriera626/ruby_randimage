@@ -1,9 +1,10 @@
 require 'coveralls'
-require 'ruby_randimage'
 Coveralls.wear!
+require 'ruby_randimage'
 
 RSpec.configure do |config|
 
+  config.raise_errors_for_deprecations!
   config.before(:all) do
     Dir.mkdir('tmp') unless File.directory?('tmp')
   end

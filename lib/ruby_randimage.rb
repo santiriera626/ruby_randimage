@@ -8,7 +8,8 @@ module RubyRandimage
     :title => "image title",
     :colors => ["#aaaaaa", "#990000"],
     :symmetry_axes => [true, true],
-    :num_cells => 8
+    :num_cells => 8,
+    :seed => nil
   }
 
   # TODO: [sriera] doc
@@ -27,10 +28,11 @@ module RubyRandimage
 
     options = DEFAULT_OPTIONS.merge(options)
     
+    # TODO: [sriera] control de parametros y rspec, controlar seed nil o entero
     raise "title is invalid" if options[:title] == nil || options[:title] == ''
     raise "num_cells must be between 2 and 256" if options[:num_cells] < 2 || options[:num_cells] > 256
 
-    matrix = generate_matrix options[:num_cells], options[:colors], options[:symmetry_axes]
+    matrix = generate_matrix options[:num_cells], options[:colors], options[:symmetry_axes], options[:seed]
 
     return generate_svg options[:title], matrix
   end
@@ -38,7 +40,9 @@ module RubyRandimage
   private
 
     # TODO: [sriera] doc
-    def self.generate_matrix num_cells, colors, symmetry_axes
+    def self.generate_matrix num_cells, colors, symmetry_axes, seed = nil
+
+      r = seed.nil? ? Random.new : Random.new( seed )
       
       cells = Array.new
       num_cells.times { |i| cells[i] = []}
@@ -52,7 +56,7 @@ module RubyRandimage
         cell_x = (cell%num_cols)
         cell_y = (cell/num_cols)
 
-        color = colors[rand(colors.length)]
+        color = colors[r.rand(colors.length)]
         
         cells[cell_x][cell_y] = color
 
