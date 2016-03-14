@@ -5,7 +5,7 @@ group :test do
 end
 
 # group :debug do 
-#  gem 'byebug'
+#   gem 'byebug'
 # end
 
 # Specify your gem's dependencies in ruby_randimage.gemspec
