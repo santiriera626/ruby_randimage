@@ -42,7 +42,7 @@ module RubyRandimage
     # TODO: [sriera] doc
     def self.generate_matrix num_cells, colors, symmetry_axes, seed = nil
 
-      r = seed.nil? ? ::Random.new : ::Random.new( seed )
+      srand(seed) if  ! seed.nil?
       
       cells = Array.new
       num_cells.times { |i| cells[i] = []}
@@ -56,7 +56,7 @@ module RubyRandimage
         cell_x = (cell%num_cols)
         cell_y = (cell/num_cols)
 
-        color = colors[r.rand(colors.length)]
+        color = colors[rand(colors.length)]
         
         cells[cell_x][cell_y] = color
 
