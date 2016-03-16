@@ -119,7 +119,7 @@ module RubyRandimage
       return cells
     end
 
-    # create a num_cells*num_cells matrix of colors randomly
+    # generate the svg string 
     #
     # Example:
     #   >> generate_svg("svg_title" , matrix)
