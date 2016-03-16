@@ -20,7 +20,7 @@ module RubyRandimage
   #
   # Example:
   #   >> RubyRandimage.create_and_save_file('test_identicon.png', options)
-  #   => result (Integer)
+  #   => result (Fixnum)
   #
   # @param filename [string] the full path and filename to save the image svg to
   # @param options [hash] additional options for the image

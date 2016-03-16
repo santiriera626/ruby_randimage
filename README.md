@@ -5,9 +5,8 @@
 [![Code Climate](https://codeclimate.com/github/santiriera626/ruby_randimage/badges/gpa.svg)](https://codeclimate.com/github/santiriera626/ruby_randimage)
 [![security](https://hakiri.io/github/santiriera626/ruby_randimage/master.svg)](https://hakiri.io/github/santiriera626/ruby_randimage/master)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ruby_randimage`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+ruby_randimage is a gem to generate SVG images with random content ... TODO: 
+examples
 
 ## Installation
 
@@ -27,17 +26,39 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Creating a svg random image and saving to svg_file
 
-## Development
+    RubyRandimage.create_and_save_file("ruby_randimage.svg")
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake false` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Creating a svg random image and returning a svg string
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+    svg = RubyRandimage.create
+
+To render this in html pass the svg string into your view and set a size for the image
+    
+    <img src="data:image/svg+xml;utf8, <%= raw(svg) %>" width="200px">
+
+## Customising the random image
+
+The random image can be customised by passing additional options
+
+    title: (String) the title of the image.
+    colors: (Array) the colors of the image, Example: ["#aaaaaa", "#990000"] or ["#aaa", "#900"].
+    symmetry_axes: (Array) the symetry of x and y axes, Example: [true, false] x_axis symmetry .
+    num_cells: (Fixnum) the number of cells in the image.
+    seed: (Fixnum) the seed to fix random numbers.
+
+Examples
+
+    svg = RubyRandimage.create( title: "ruby rand image", num_cells: 8, colors: ["#fff", "f00"], symmetry_axes: [true, true])
+
+    Color tip: You can define each color density repeating color values. For example to create an image with aproximately 75% white cells and 25% red cells you can do:
+    
+    svg = RubyRandimage.create( title: "ruby rand image", num_cells: 8, colors: ["#fff", "#fff", "#fff", "f00"], symmetry_axes: [true, true])
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ruby_randimage. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/santiriera626/ruby_randimage. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 
 ## License
