@@ -47,14 +47,29 @@ describe RubyRandimage do
       expect(result).to be_truthy
     end
 
-    it "does not create a svg image with an invalid grid size" do
-      expect{RubyRandimage.create(:num_cells=> 1)}.to raise_exception('num_cells must be between 2 and 256')
-      expect{RubyRandimage.create(:num_cells=> 257)}.to raise_exception('num_cells must be between 2 and 256')
+    it "raise an exception with an invalid num_cells" do
+      expect{RubyRandimage.create(:num_cells=> 1)}.to raise_exception('num_cells must be between 2 and 16')
+      expect{RubyRandimage.create(:num_cells=> 17)}.to raise_exception('num_cells must be between 2 and 16')
     end
 
-    it "does not create a svg image with an invalid title" do
+    it "raise an exception with an invalid title" do
       expect{RubyRandimage.create(:title=> nil)}.to raise_exception('title is invalid')
       expect{RubyRandimage.create(:title=> '')}.to raise_exception('title is invalid')
     end
+
+    it "raise an exception with an invalid symmetry_axes" do
+      expect{RubyRandimage.create(:symmetry_axes=> nil)}.to raise_exception('symmetry_axes must be a two elemnts array')
+      expect{RubyRandimage.create(:symmetry_axes=> [true])}.to raise_exception('symmetry_axes must be a two elemnts array')
+    end
+
+    it "raise an exception with an invalid colors" do
+      expect{RubyRandimage.create(:colors=> nil)}.to raise_exception('colors must be an array with at least two elemments')
+      expect{RubyRandimage.create(:colors=> ["#ffffff"])}.to raise_exception('colors must be an array with at least two elemments')
+    end
+
+    it "raise an exception with an invalid seed" do
+      expect{RubyRandimage.create(:seed=> "seed")}.to raise_exception('seed is invalid, must be nil or fixnum')
+    end
+
   end
 end
