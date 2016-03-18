@@ -6,7 +6,7 @@
 [![security](https://hakiri.io/github/santiriera626/ruby_randimage/master.svg)](https://hakiri.io/github/santiriera626/ruby_randimage/master)
 
 
-Are you looking for an amazing avatar generator for your website`s users? ruby_randimage is your gem! 
+Are you looking for an amazing avatar generator for your website users? ruby_randimage is your gem! 
 
 A powerful, customizable and sophisticated awesome SVG avatars generator from several options such as symmetries, size, color palette and color densities.
 
