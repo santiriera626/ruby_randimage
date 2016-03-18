@@ -9,10 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["santiriera626" , "camumino", "franx0"]
   spec.email         = ["santiriera626@gmail.com", "camumino@gmail.com", "francisco.moya.martinez@gmail.com"]
 
-  spec.summary       = %q{Gem to generate SVG images with random content.}
+  spec.summary       = %q{Pure Ruby library to create SVG random images}
   spec.description   =  <<-EOT
-    Generate SVG images with random content, select the image size, colors and symmetries.
-    The image can be saved in a file system or can be inserted directly in html image tag.
+    A powerful, customizable and sophisticated awesome SVG avatars generator from several options such as symmetries, size, color palette and color densities.
   EOT
   spec.homepage      = "ruby_randimage.monkeykoders.net"
   spec.license       = "MIT"
