@@ -8,6 +8,7 @@
 /spec/reports/
 /tmp/
 temp_image_*
+test_index.html
 .ruby-version
 .ruby-gemset
 .byebug_history

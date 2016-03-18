@@ -9,12 +9,11 @@ Gem::Specification.new do |spec|
   spec.authors       = ["santiriera626" , "camumino", "franx0"]
   spec.email         = ["santiriera626@gmail.com", "camumino@gmail.com", "francisco.moya.martinez@gmail.com"]
 
-  spec.summary       = %q{Write a short summary, because Rubygems requires one.}
+  spec.summary       = %q{Pure Ruby library to create SVG random images}
   spec.description   =  <<-EOT
-    description text 
-    more text.
+    A powerful, customizable and sophisticated awesome SVG avatars generator from several options such as symmetries, size, color palette and color densities.
   EOT
-  spec.homepage      = ""
+  spec.homepage      = "ruby_randimage.monkeykoders.net"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or

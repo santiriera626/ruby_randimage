@@ -5,9 +5,13 @@
 [![Code Climate](https://codeclimate.com/github/santiriera626/ruby_randimage/badges/gpa.svg)](https://codeclimate.com/github/santiriera626/ruby_randimage)
 [![security](https://hakiri.io/github/santiriera626/ruby_randimage/master.svg)](https://hakiri.io/github/santiriera626/ruby_randimage/master)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ruby_randimage`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
+Are you looking for an amazing avatar generator for your website`s users? ruby_randimage is your gem! 
+
+A powerful, customizable and sophisticated awesome SVG avatars generator from several options such as symmetries, size, color palette and color densities.
+
+RubyRandimage is a pure Ruby library without any dependencies.
+
 
 ## Installation
 
@@ -27,17 +31,43 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Create a random svg image saved on the file system.
 
-## Development
+    RubyRandimage.create_and_save_file("ruby_randimage.svg")
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake false` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Create a random svg image String 
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+    svg = RubyRandimage.create
+
+Returned String can be used in a simple way in your HTML document settting a size for your image
+    
+    <img src="data:image/svg+xml;utf8, <%= raw(svg) %>" width="200px">
+
+## Customizing your random svg image
+
+Random svg image can be customized setting the following options:
+
+    title: (String) SVG <title> tag for image. Example: "awesome_avatar"
+    colors: (Array) colors to compose your image, Example: ["#aaaaaa", "#990000"] or ["#aaa", "#900"].
+    symmetry_axes: (Array).
+        - No symmetry: [false, false]
+        - X symmetry: [true, false]
+        - Y symmetry: [false, true]
+        - Full symmetry: [true, true]
+    num_cells: (Fixnum) Number of rows and columns in the image. Min: 2, Max:16
+    seed: (Fixnum) seed to set random numbers.
+
+Examples
+
+    svg = RubyRandimage.create( title: "ruby rand image", num_cells: 8, colors: ["#fff", "f00"], symmetry_axes: [true, true])
+
+    Colors tip: You can define each color density setting the same color multiple times. For example to create an image with aproximately 75% white cells and 25% red cells you can do:
+    
+    svg = RubyRandimage.create( title: "ruby rand image", num_cells: 8, colors: ["#fff", "#fff", "#fff", "f00"], symmetry_axes: [true, true])
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ruby_randimage. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/santiriera626/ruby_randimage. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 
 ## License
