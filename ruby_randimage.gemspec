@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.description   =  <<-EOT
     A powerful, customizable and sophisticated awesome SVG avatars generator from several options such as symmetries, size, color palette and color densities.
   EOT
-  spec.homepage      = "ruby_randimage.monkeykoders.net"
+  spec.homepage      = "http://ruby_randimage.monkeykoders.net"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
