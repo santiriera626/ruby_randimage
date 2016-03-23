@@ -12,6 +12,11 @@ A powerful, customizable and sophisticated awesome SVG avatars generator from se
 
 RubyRandimage is a pure Ruby library without any dependencies.
 
+## Demo App
+
+We have implemented a demo app for you to try out: [Demo App](http://ruby_randimage.monkeykoders.net)
+
+Here is the repository: [https://github.com/camumino/ruby_randimage_demoapp](https://github.com/camumino/ruby_randimage_demoapp)
 
 ## Installation
 
