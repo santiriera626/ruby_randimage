@@ -1,5 +1,9 @@
 # RubyRandimage
 
+<img src="http://ruby_randimage.monkeykoders.net/example1.svg" border="1" width="120">
+<img src="http://ruby_randimage.monkeykoders.net/example2.svg" border="1" width="120">
+<img src="http://ruby_randimage.monkeykoders.net/example3.svg" border="1" width="120">
+
 [![Build Status](https://travis-ci.org/santiriera626/ruby_randimage.svg?branch=master)](https://travis-ci.org/santiriera626/ruby_randimage)
 [![Coverage Status](https://coveralls.io/repos/github/santiriera626/ruby_randimage/badge.svg?branch=master)](https://coveralls.io/github/santiriera626/ruby_randimage?branch=master)
 [![Code Climate](https://codeclimate.com/github/santiriera626/ruby_randimage/badges/gpa.svg)](https://codeclimate.com/github/santiriera626/ruby_randimage)
