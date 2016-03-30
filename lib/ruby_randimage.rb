@@ -1,5 +1,5 @@
 require "ruby_randimage/version"
-
+require "ruby_matrix_to_svg"
 
 # RubyRandimage creates a random image with the input values.
 # The image created has a width = num_cells and all the internal squares have a width of 1px
@@ -57,7 +57,7 @@ module RubyRandimage
     matrix = generate_matrix options[:num_cells], options[:colors], options[:symmetry_axes], options[:seed]
 
     # generate and return the svg string with matrix values
-    return generate_svg options[:title], matrix
+    return RubyMatrixToSvg.matrix_to_svg options[:title], matrix
   end
 
   private
@@ -97,21 +97,21 @@ module RubyRandimage
         color = colors[rand(colors.length)]
         
         # fill cell
-        cells[cell_x][cell_y] = color
+        cells[cell_y][cell_x] = color
 
         # mirror cell x_axis
         if symmetry_axes[0] && num_cells - 1 != 2*cell_x
-          cells[num_cells - cell_x - 1][cell_y] = color
+          cells[cell_y][num_cells - cell_x - 1] = color
 
           # mirror cell x_axis and y_axis
           if symmetry_axes[1] && num_cells -1 != 2*cell_y
-            cells[num_cells - cell_x - 1][num_cells - cell_y - 1] = color
+            cells[num_cells - cell_y - 1][num_cells - cell_x - 1] = color
           end
         end
 
         #mirror cell y_axis
         if symmetry_axes[1] && num_cells -1 != 2*cell_y
-          cells[cell_x][ num_cells - cell_y-1 ] = color
+          cells[ num_cells - cell_y-1 ][cell_x] = color
         end
       end
 
@@ -119,36 +119,4 @@ module RubyRandimage
       return cells
     end
 
-    # generate the svg string 
-    #
-    # Example:
-    #   >> generate_svg("svg_title" , matrix)
-    #   => (String)
-    #
-    # @param title (String) the title of the svg image
-    # @param matrix (Array[Array[(String)]]) the colors matrix
-
-    def self.generate_svg title, matrix
-
-      # open svg tag
-      size = matrix.length
-      svg = "<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='#{size}' height='#{size}'>"
-
-      # set title
-      svg << "<title>#{title}</title>" 
-
-      # background with first color
-      svg << "<rect width='100%' height='100%' x='0' y='0' fill='#{matrix[0][0]}' stroke='none' shape-rendering='crispEdges'/>"
-
-      size.times do |col|
-        size.times do |row|
-          # draw rect if its color its different than background color
-          svg << "<rect fill='#{matrix[col][row]}' stroke='none' fill-rule='nonzero' x='#{col}' y='#{row}' width='1' height='1' shape-rendering='crispEdges' />" if matrix[col][row] != matrix[0][0]
-        end
-      end 
-
-      # close svg tag
-      svg << "</svg>"
-
-    end
 end
